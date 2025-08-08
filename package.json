@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "pnpm --filter ai-agent-desktop dev",
-    "build": "pnpm --filter ai-agent-desktop build"
+    "build": "pnpm --filter ai-agent-desktop build",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
@@ -13,8 +14,19 @@
   "devDependencies": {
     "@electron-toolkit/tsconfig": "^1.0.1",
     "@types/node": "^22.16.5",
+    "cross-env": "^10.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.4",
+    "prettier": "^3.6.2",
+    "rimraf": "^6.0.1",
     "ts-node": "^10.9.2",
     "tsx": "^4.20.3",
     "typescript": "^5.8.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "electron",
+      "esbuild"
+    ]
   }
 }
