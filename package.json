@@ -1,0 +1,14 @@
+{
+  "name": "ai-agent-desktop-pure",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "pnpm --filter ai-agent-desktop dev",
+    "build": "pnpm --filter ai-agent-desktop build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
