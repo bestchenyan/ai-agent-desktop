@@ -1,0 +1,18 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "envMode": "loose",
+  "tasks": {
+    "//#bootstrap": {
+      "dependsOn": ["^prepare"],
+      "outputs": ["**/build/**", "**/dist/**", "**/out/**"]
+    },
+    "prepare": {
+      "dependsOn": ["^prepare"]
+    },
+    "typecheck": {},
+    "dev": {
+      "persistent": true,
+      "cache": false
+    }
+  }
+}

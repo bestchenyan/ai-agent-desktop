@@ -1,0 +1,80 @@
+{
+  "name": "ai-agent-desktop-pure",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@9.15.4",
+  "description": "An Electron application with React and TypeScript",
+  "main": "./dist/main/index.js",
+  "author": "example.com",
+  "homepage": "https://electron-vite.org",
+  "scripts": {
+    "bootstrap": "pnpm install",
+    "format": "prettier --write .",
+    "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
+    "typecheck:node": "tsc --noEmit -p tsconfig.node.json --composite false",
+    "typecheck:web": "tsc --noEmit -p tsconfig.web.json --composite false",
+    "typecheck": "npm run typecheck:node && npm run typecheck:web",
+    "start": "electron-forge start",
+    "dev": "electron-vite dev",
+    "package": "electron-forge package",
+    "clean": "rimraf dist out",
+    "make": "electron-forge make",
+    "build": "npm run clean && npm run typecheck && electron-vite build && electron-forge make",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@common/configs": "workspace:*",
+    "@computer-use/mac-screen-capture-permissions": "^1.0.2",
+    "@computer-use/nut-js": "^4.2.0",
+    "@electron-forge/cli": "^7.8.3",
+    "@electron-forge/maker-deb": "^7.8.3",
+    "@electron-forge/maker-dmg": "^7.8.3",
+    "@electron-forge/maker-rpm": "^7.8.3",
+    "@electron-forge/maker-squirrel": "^7.8.3",
+    "@electron-forge/maker-zip": "^7.8.3",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.8.3",
+    "@electron-forge/plugin-fuses": "^7.8.3",
+    "@electron-toolkit/eslint-config-prettier": "^3.0.0",
+    "@electron-toolkit/eslint-config-ts": "^3.0.0",
+    "@electron-toolkit/preload": "^3.0.2",
+    "@electron-toolkit/tsconfig": "^1.0.1",
+    "@electron-toolkit/utils": "^4.0.0",
+    "@electron/fuses": "^1.8.0",
+    "@tailwindcss/vite": "^4.1.11",
+    "@types/node": "^22.16.5",
+    "@vitejs/plugin-react": "^4.7.0",
+    "electron": "^37.2.3",
+    "electron-packager-languages": "^0.6.0",
+    "electron-squirrel-startup": "^1.0.1",
+    "electron-updater": "^6.6.2",
+    "electron-vite": "^4.0.0",
+    "eslint": "^9.31.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.5",
+    "prettier": "^3.6.2",
+    "rimraf": "^6.0.1",
+    "tailwindcss": "^4.1.11",
+    "turbo": "^2.5.5",
+    "typescript": "^5.8.3",
+    "vite": "^7.0.5",
+    "vite-tsconfig-paths": "^5.1.4",
+    "zustand": "^5.0.7"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "electron",
+      "esbuild"
+    ]
+  },
+  "dependencies": {
+    "@computer-use/node-mac-permissions": "^2.2.2",
+    "sharp": "^0.34.3"
+  },
+  "lint-staged": {
+    "*": "prettier --write",
+    "*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}": "eslint --fix"
+  }
+}
